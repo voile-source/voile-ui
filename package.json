@@ -9,6 +9,7 @@
     "typecheck:play": "vue-tsc -p tsconfig.play.json --composite false --noEmit",
     "typecheck": "run-p typecheck:web typecheck:play",
     "prepare": "husky install",
+    "commit" : "git-cz",
     "release": "standard-versions"
   },
   "lint-staged": {
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@commitlint/config-conventional": "^17.4.2",
     "@types/node": "^18.11.18",
+    "commitizen": "^4.2.6",
     "commitlint": "^17.4.2",
     "eslint": "^8.31.0",
     "eslint-config-prettier": "^8.6.0",
