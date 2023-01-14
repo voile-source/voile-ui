@@ -1,6 +1,4 @@
-import { isClient } from '@vueuse/core';
-import { isNumber, isObject, isString } from '../types';
-import type { CSSProperties } from 'vue';
+import { isNumber, isString } from '../types';
 
 export function addUnit(value?: string | number, defaultUnit = 'px') {
   if (!value) return '';

@@ -1,9 +1,10 @@
 import { createApp } from 'vue';
 import VIcon from '@voile-ui/components/icon';
+import VDivider from '@voile-ui/components/divider';
 import '@voile-ui/theme-chalk/src/index.scss';
 import App from './App.vue';
 
-const components = [VIcon];
+const components = [VIcon, VDivider];
 const INSTALLED_KEY = Symbol('INSTALLED_KEY');
 
 const Voile = {

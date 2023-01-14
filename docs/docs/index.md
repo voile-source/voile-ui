@@ -2,16 +2,16 @@
 layout: home
 sidebar: auto
 
-title: Kitty
+title: ETU Design
 titleTemplate: 一个Vue3组件库
 
 hero:
-  name: Kitty
+  name: ETU Design
   text: 一个Vue3组件库
   tagline: 没啥特点仅供学习
   image:
     src: /logo.png
-    alt: Kitty
+    alt: ETU Design
   actions:
     - theme: brand
       text: 开始

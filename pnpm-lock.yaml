@@ -4,7 +4,9 @@ importers:
 
   .:
     specifiers:
+      '@commitlint/cli': ^17.4.2
       '@commitlint/config-conventional': ^17.4.2
+      '@types/lodash-es': ^4.17.6
       '@types/node': ^18.11.18
       '@typescript-eslint/parser': ^5.48.1
       '@voile-ui/components': workspace:^1.0.0
@@ -15,17 +17,20 @@ importers:
       '@vueuse/core': ^9.10.0
       commitizen: ^4.2.6
       commitlint: ^17.4.2
+      conventional-changelog-cli: ^2.2.2
       eslint: ^8.31.0
       eslint-config-prettier: ^8.6.0
       eslint-plugin-prettier: ^4.2.1
       husky: ^8.0.3
       lint-staged: ^13.1.0
+      lodash: ^4.17.21
       lodash-es: ^4.17.21
       lodash-unified: ^1.0.3
       npm-run-all: ^4.1.5
       prettier: ^2.8.2
       pretty: ^2.0.0
       pretty-quick: ^3.1.3
+      right-pad: ^1.0.1
       sass: ^1.57.1
       standard-version: ^9.5.0
       typescript: ^4.9.4
@@ -37,24 +42,29 @@ importers:
       '@voile-ui/theme-chalk': link:packages/theme-chalk
       '@voile-ui/utils': link:packages/utils
     devDependencies:
+      '@commitlint/cli': 17.4.2
       '@commitlint/config-conventional': 17.4.2
+      '@types/lodash-es': 4.17.6
       '@types/node': 18.11.18
       '@voile-ui/hooks': link:packages/hooks
       '@vue/shared': 3.2.45
       '@vueuse/core': 9.10.0_vue@3.2.45
       commitizen: 4.2.6
       commitlint: 17.4.2
+      conventional-changelog-cli: 2.2.2
       eslint: 8.31.0
       eslint-config-prettier: 8.6.0_eslint@8.31.0
       eslint-plugin-prettier: 4.2.1_iu5s7nk6dw7o3tajefwfiqfmge
       husky: 8.0.3
       lint-staged: 13.1.0
+      lodash: 4.17.21
       lodash-es: 4.17.21
-      lodash-unified: 1.0.3_lodash-es@4.17.21
+      lodash-unified: 1.0.3_3ib2ivapxullxkx3xftsimdk7u
       npm-run-all: 4.1.5
       prettier: 2.8.2
       pretty: 2.0.0
       pretty-quick: 3.1.3_prettier@2.8.2
+      right-pad: 1.0.1
       sass: 1.57.1
       standard-version: 9.5.0
       typescript: 4.9.4
@@ -760,6 +770,16 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
+    dev: true
+
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.191
+    dev: true
+
+  /@types/lodash/4.14.191:
+    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
   /@types/minimatch/3.0.5:
@@ -1487,6 +1507,18 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       q: 1.5.1
+    dev: true
+
+  /conventional-changelog-cli/2.2.2:
+    resolution: {integrity: sha512-8grMV5Jo8S0kP3yoMeJxV2P5R6VJOqK72IiSV9t/4H5r/HiRqEBQ83bYGuz4Yzfdj4bjaAEhZN/FFbsFXr5bOA==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      add-stream: 1.0.0
+      conventional-changelog: 3.1.25
+      lodash: 4.17.21
+      meow: 8.1.2
+      tempfile: 3.0.0
     dev: true
 
   /conventional-changelog-codemirror/2.0.8:
@@ -3067,13 +3099,15 @@ packages:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
     dev: true
 
-  /lodash-unified/1.0.3_lodash-es@4.17.21:
+  /lodash-unified/1.0.3_3ib2ivapxullxkx3xftsimdk7u:
     resolution: {integrity: sha512-WK9qSozxXOD7ZJQlpSqOT+om2ZfcT4yO+03FuzAHD0wF6S0l0090LRPDx3vhTTLZ8cFKpBn+IOcVXK6qOcIlfQ==}
     peerDependencies:
       '@types/lodash-es': '*'
       lodash: '*'
       lodash-es: '*'
     dependencies:
+      '@types/lodash-es': 4.17.6
+      lodash: 4.17.21
       lodash-es: 4.17.21
     dev: true
 
@@ -3853,6 +3887,11 @@ packages:
     resolution: {integrity: sha512-V2hovdzFbOi77/WajaSMXk2OLm+xNIeQdMMuB7icj7bk6zi2F8GGAxigcnDFpJHbNyNcgyJDiP+8nOrY5cZGrA==}
     dev: true
 
+  /right-pad/1.0.1:
+    resolution: {integrity: sha512-bYBjgxmkvTAfgIYy328fmkwhp39v8lwVgWhhrzxPV3yHtcSqyYKe9/XOhvW48UFjATg3VuJbpsp5822ACNvkmw==}
+    engines: {node: '>= 0.10'}
+    dev: true
+
   /rimraf/3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
@@ -4205,6 +4244,19 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /temp-dir/2.0.0:
+    resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
+    engines: {node: '>=8'}
+    dev: true
+
+  /tempfile/3.0.0:
+    resolution: {integrity: sha512-uNFCg478XovRi85iD42egu+eSFUmmka750Jy7L5tfHI5hQKKtbPnxaSaXAbBqCDYrw3wx4tXjKwci4/QmsZJxw==}
+    engines: {node: '>=8'}
+    dependencies:
+      temp-dir: 2.0.0
+      uuid: 3.4.0
+    dev: true
+
   /text-extensions/1.9.0:
     resolution: {integrity: sha512-wiBrwC1EhBelW12Zy26JeOUkQ5mRu+5o8rpsJk5+2t+Y5vE7e842qtZDQ2g1NpX/29HdyFeJ4nSIhI47ENSxlQ==}
     engines: {node: '>=0.10'}
@@ -4399,6 +4451,12 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: true
+
+  /uuid/3.4.0:
+    resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
+    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
+    hasBin: true
     dev: true
 
   /v8-compile-cache-lib/3.0.1:
