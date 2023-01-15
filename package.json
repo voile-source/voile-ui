@@ -9,8 +9,9 @@
     "typecheck:web": "vue-tsc -p tsconfig.web.json --composite false --noEmit",
     "typecheck:play": "vue-tsc -p tsconfig.play.json --composite false --noEmit",
     "typecheck": "run-p typecheck:web typecheck:play",
-    "cz": "git-cz",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "release": "standard-version",
+    "cz": "git-cz"
   },
   "config": {
     "commitizen": {
