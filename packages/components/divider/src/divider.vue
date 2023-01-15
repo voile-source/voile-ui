@@ -11,7 +11,6 @@ import { dividerProps } from './divider'
 import { isUndefined } from '@voile-ui/utils'
 import type {CSSProperties} from 'vue'
 
-
 defineOptions({
   name: "VDivider"
 })
