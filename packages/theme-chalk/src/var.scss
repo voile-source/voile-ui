@@ -65,9 +65,20 @@
   --color-fill-1: rgba(var(--color-grey-9), 0.09);
   --color-fill-2: rgba(var(--color-grey-9), 0.13);
   --color-fill-3: rgba(var(--color-grey-9), 0.2);
-  --color-default: rgba(var(--color-grey-0), 1);
-  --color-default-hover: rgba(var(--color-grey-1), 1);
-  --color-default-active: rgba(var(--color-grey-2), 1);
+  --color-fill-4: rgba(var(--color-grey-9), 0.35);
+  --color-fill-5: rgba(var(--color-grey-9), 0.5);
+  --color-fill-6: rgba(var(--color-grey-9), 0.6);
+  --color-fill-7: rgba(var(--color-grey-9), 0.7);
+  --color-fill-8: rgba(var(--color-grey-9), 0.8);
+  --color-fill-9: rgba(var(--color-grey-9), 0.9);
+  --color-default: #f5f7fa;
+  --color-default-hover: #ebedf0;
+  --color-default-active: #e6e8eb;
+  --color-default-disabled: rgba(var(--color-grey-4), 1);
+  --color-default-light: rgba(var(--color-grey-2), 1);
+  --color-default-light-hover: rgba(var(--color-grey-3), 1);
+  --color-default-light-active: rgba(var(--color-grey-4), 1);
+  --color-default-light-disabled: rgba(var(--color-grey-4), 0.5);
   --color-primary: rgba(var(--color-blue-5), 1);
   --color-primary-hover: rgba(var(--color-blue-6), 1);
   --color-primary-active: rgba(var(--color-blue-7), 1);
@@ -75,6 +86,7 @@
   --color-primary-light: rgba(var(--color-blue-0), 1);
   --color-primary-light-hover: rgba(var(--color-blue-1), 1);
   --color-primary-light-active: rgba(var(--color-blue-2), 1);
+  --color-primary-light-disabled: rgba(var(--color-blue-2), 0.5);
   --color-success: rgba(var(--color-green-5), 1);
   --color-success-hover: rgba(var(--color-green-6), 1);
   --color-success-active: rgba(var(--color-green-7), 1);
@@ -82,6 +94,7 @@
   --color-success-light: rgba(var(--color-green-0), 1);
   --color-success-light-hover: rgba(var(--color-green-1), 1);
   --color-success-light-active: rgba(var(--color-green-2), 1);
+  --color-success-light-disabled: rgba(var(--color-green-2), 0.5);
   --color-danger: rgba(var(--color-red-5), 1);
   --color-danger-hover: rgba(var(--color-red-6), 1);
   --color-danger-active: rgba(var(--color-red-7), 1);
@@ -89,6 +102,7 @@
   --color-danger-light: rgba(var(--color-red-0), 1);
   --color-danger-light-hover: rgba(var(--color-red-1), 1);
   --color-danger-light-active: rgba(var(--color-red-2), 1);
+  --color-danger-light-disabled: rgba(var(--color-red-2), 0.5);
   --color-warning: rgba(var(--color-orange-5), 1);
   --color-warning-hover: rgba(var(--color-orange-6), 1);
   --color-warning-active: rgba(var(--color-orange-7), 1);
@@ -96,6 +110,7 @@
   --color-warning-light: rgba(var(--color-orange-0), 1);
   --color-warning-light-hover: rgba(var(--color-orange-1), 1);
   --color-warning-light-active: rgba(var(--color-orange-2), 1);
+  --color-warning-light-disabled: rgba(var(--color-orange-2), 0.5);
   --color-info: rgba(var(--color-grey-5), 1);
   --color-info-hover: rgba(var(--color-grey-6), 1);
   --color-info-active: rgba(var(--color-grey-7), 1);
@@ -103,6 +118,7 @@
   --color-info-light: rgba(var(--color-grey-0), 1);
   --color-info-light-hover: rgba(var(--color-grey-1), 1);
   --color-info-light-active: rgba(var(--color-grey-2), 1);
+  --color-info-light-disabled: rgba(var(--color-grey-2), 0.5);
   --color-disabled-bg: rgba(var(--color-grey-1), 1);
   --color-disabled-fill: rgba(var(--color-grey-8), 1);
   --color-disabled-text: rgba(var(--color-grey-9), 1);
