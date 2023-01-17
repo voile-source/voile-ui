@@ -1,11 +1,6 @@
 import type { ExtractPropTypes } from 'vue';
 import type Button from './button.vue';
-
-const booleanType = {
-  type: Boolean,
-  values: [true, false],
-  default: false,
-};
+import { stateType, booleanType } from '@voile-ui/hooks';
 
 export const buttonProps = {
   size: {
@@ -13,15 +8,11 @@ export const buttonProps = {
     values: ['small', 'default', 'large'],
     default: '',
   },
-  type: {
-    type: String,
-    values: ['primary', 'success', 'warning', 'danger', 'info'],
-    default: '',
-  },
   icon: {
     type: String,
     default: '',
   },
+  type: stateType,
   link: booleanType,
   text: booleanType,
   plain: booleanType,

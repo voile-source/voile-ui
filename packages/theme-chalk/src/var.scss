@@ -71,6 +71,10 @@
   --color-fill-7: rgba(var(--color-grey-9), 0.7);
   --color-fill-8: rgba(var(--color-grey-9), 0.8);
   --color-fill-9: rgba(var(--color-grey-9), 0.9);
+  --color: var(--color-text-0);
+  --color-hover: var(--color-primary-light);
+  --color-active: var(--color-primary);
+  --color-disabled: var(--color-white);
   --color-default: #f5f7fa;
   --color-default-hover: #ebedf0;
   --color-default-active: #e6e8eb;

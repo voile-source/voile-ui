@@ -1,7 +1,7 @@
 @use 'mixins/mixins.scss' as *;
+@use 'mixins/config.scss' as *;
 
 $prefix: '--color-';
-$states: default, primary, success, danger, warning, info;
 
 @mixin color($color) {
   --button-text-color: var(--color-white);

@@ -1,0 +1,72 @@
+@use './mixins/mixins.scss' as *;
+@use './mixins/config.scss' as *;
+
+$prefix: '--color-';
+
+@mixin setState($color) {
+  &:link {
+    --link-color: var(#{$prefix + $color});
+  }
+  &:visited {
+    --link-color: var(#{$prefix + $color + '-light-hover'});
+  }
+  &:hover,
+  &:active {
+    --link-color: var(#{$prefix + $color + '-light-active'});
+  }
+  @include when(disabled) {
+    --link-color: var(#{$prefix + $color + '-disabled'});
+  }
+  @include when(underline) {
+    --link-underline-color: var(#{$prefix + $color});
+  }
+}
+
+@include b(link) {
+  --link-underline-color: var(--color-primary);
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  position: relative;
+  padding: 0;
+  font-size: var(--font-size-default);
+  color: var(--link-color);
+  text-decoration: none;
+  cursor: pointer;
+
+  &:link {
+    --link-color: var(--color-text-0);
+  }
+  &:visited {
+    --link-color: var(--color-primary-light);
+  }
+  &:hover,
+  &:active {
+    --link-color: var(--color-active);
+  }
+
+  @include when(underline) {
+    &:hover:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 0;
+      bottom: 0;
+      border-bottom: 1px solid var(--link-underline-color);
+    }
+  }
+
+  @include when(disabled) {
+    --link-color: var(--color-fill-5);
+    cursor: not-allowed;
+  }
+
+  @each $item in $states {
+    @include e($item) {
+      @include setState($item);
+    }
+  }
+}
