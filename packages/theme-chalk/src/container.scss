@@ -1,0 +1,61 @@
+@use 'sass:map';
+@use './mixins/mixins.scss' as *;
+@use './mixins/function.scss' as *;
+@use './mixins/_var.scss' as *;
+@use './common/var.scss' as *;
+
+@mixin flex-basic() {
+  flex: 1;
+  flex-basis: auto;
+}
+
+// container组件样式
+@include b(container) {
+  display: flex;
+  flex-direction: row;
+  @include flex-basic;
+  min-width: 0;
+
+  @include when(vertical) {
+    flex-direction: column;
+  }
+}
+
+// main组件样式
+@include b(main) {
+  @include set-component-css-var(main, $main);
+  display: block;
+  @include flex-basic();
+  overflow: auto;
+  padding: getCssVar(main, padding);
+}
+
+// header组件样式
+@include b(header) {
+  @include set-component-css-var(header, $header);
+  padding: getCssVar(header, padding);
+  height: getCssVar(header, height);
+  flex-shrink: 0;
+}
+
+// aside组件样式
+@include b(aside) {
+  @include set-component-css-var(
+    aside,
+    (
+      'width': 300px,
+    )
+  );
+  overflow: auto;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: getCssVar(aside, width);
+}
+
+// footer组件样式
+@include b(footer) {
+  @include set-component-css-var(footer, $footer);
+  padding: getCssVar(footer, padding);
+  height: getCssVar(footer, height);
+  flex-shrink: 0;
+}

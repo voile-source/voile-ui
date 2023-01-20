@@ -3,8 +3,9 @@ import Divider from './divider';
 import Breadcrumb from './breadcrumb';
 import Button from './button';
 import Link from './link';
+import Container from './container/';
 
-const components = [Icon, Button, Divider, Breadcrumb, Link];
+const components = [Icon, Button, Divider, Breadcrumb, Link, Container];
 const INSTALLED_KEY = Symbol('INSTALLED_KEY');
 
 export default {
