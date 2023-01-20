@@ -41,8 +41,7 @@
 }
 // 判断父级选择器，是否包含`--` `.is-`  `：`这三种字符
 @function hitAllSpecialNestRule($selector) {
-  @return containsModifier($selector) or containWhenFlag($selector) or
-    containPseudoClass($selector);
+  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
 }
 
 // join var name
