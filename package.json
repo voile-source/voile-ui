@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cd play && pnpm dev && cd ../",
+    "dev": "pnpm -C play dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typecheck:web": "vue-tsc -p tsconfig.web.json --composite false --noEmit",
     "typecheck:play": "vue-tsc -p tsconfig.play.json --composite false --noEmit",
