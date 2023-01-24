@@ -13,6 +13,7 @@ export const buttonProps = {
     default: '',
   },
   type: stateType,
+  bg: booleanType,
   link: booleanType,
   text: booleanType,
   plain: booleanType,

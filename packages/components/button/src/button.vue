@@ -20,8 +20,9 @@ const nc = useNamespace("button");
 
 const classList = [
   nc.b(),
-  props.type === "" ? "" : nc.e(props.type),
+  props.type === "" ? "" : nc.m(props.type),
   props.size === "" || props.size === "default" ? "" : nc.m(props.size),
+  nc.is("bg", props.bg),
   nc.is("plain", props.plain),
   nc.is("text", props.text),
   nc.is("link", props.link),
