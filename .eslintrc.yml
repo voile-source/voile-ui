@@ -14,7 +14,7 @@ parserOptions:
 plugins:
   - vue
   - '@typescript-eslint'
-   # - import
+  # - import
   - prettier
 rules: {
   eqeqeq: off

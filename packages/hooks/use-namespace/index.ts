@@ -16,6 +16,7 @@ const _bem = (namespace: string, block: string, blockSuffix: string, element: st
     cls += `--${modifier}`;
   }
   return cls;
+  
 };
 
 export const useNamespace = (block: string) => {
