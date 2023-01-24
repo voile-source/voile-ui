@@ -1,215 +1,155 @@
 @use 'mixins/mixins.scss' as *;
 @use 'mixins/config.scss' as *;
+@use 'common/var.scss' as *;
+@use 'mixins/var' as *;
+@use 'mixins/function.scss' as *;
+@use './mixins/button' as *;
 
-$prefix: '--color-';
-
-@mixin color($color) {
-  --button-text-color: var(--color-white);
-  --button-bg-color: var(#{$prefix + $color});
-  --button-border-color: var(#{$prefix + $color});
-  &:hover {
-    @include color-state($color, 'hover');
-  }
-  &:active {
-    @include color-state($color, 'active');
-  }
-}
-
-@mixin color-state($color, $state) {
-  --button-text-color: var(--color-white);
-  --button-bg-color: var(#{$prefix + $color + '-' + $state});
-  --button-border-color: var(#{$prefix + $color + '-' + $state});
-}
-
-@mixin color-link($color, $state) {
-  --button-bg-color: transparent;
-  --button-border-color: transparent;
-  --button-text-color: var(#{$prefix + $color + '-' + $state});
-}
-
-@mixin default($color) {
-  --button-text-color: var(#{$color});
-  --button-bg-color: var(--color-white);
-  --button-border-color: var(--color-fill-3);
-  --button-border-radius: var(--border-radius-small);
-  --button-font-size: var(--font-size-default);
-  --button-height: 32px;
-}
-
-@mixin default-hover() {
-  --button-text-color: var(--color-primary);
-  --button-bg-color: var(--color-primary-light);
-  --button-border-color: var(--color-primary-light-hover);
-}
-
-@mixin default-active($color) {
-  $suffix: '-light';
-  --button-text-color: var(#{$prefix + $color});
-  --button-bg-color: var(#{$prefix + $color + $suffix});
-  --button-border-color: var(#{$prefix + $color});
-}
-
-@mixin is-plain($color) {
-  @include when(plain) {
-    @include default-active($color);
-    &:hover {
-      @include color($color);
-    }
-    &:active {
-      @include color-state($color, active);
-    }
-
-    @include is-disabled(#{$color + '-light'});
-  }
-}
-
-@mixin is-disabled($color) {
-  @include when(disabled) {
-    @include color-state($color, 'disabled');
-    &:hover,
-    &:active {
-      @include color-state($color, 'disabled');
-    }
-  }
-}
-
-@mixin is-link($color) {
-  @include when(link) {
-    --button-text-color: var(#{$prefix + $color});
-    &:hover {
-      @include color-link($color, 'light-hover');
-    }
-    &:active {
-      @include color-link($color, 'active');
-    }
-    @include when(disabled) {
-      --button-text-color: var(#{$prefix + $color + '-disabled'});
-      --button-bg-color: transparent;
-      --button-border-color: transparent;
-    }
-  }
-}
-
-@mixin is-text($color) {
-  @include when(text) {
-    --button-text-color: var(#{$prefix + $color});
-    --button-bg-color: transparent;
-    --button-border-color: transparent;
-  }
-}
-
-@mixin setState($state) {
-  @include color($state);
-  @include is-plain($state);
-  @include is-disabled($state);
-  @include is-link($state);
-  @include is-text($state);
+@include b(button) {
+  @include set-component-css-var(button, $button);
 }
 
 @include b(button) {
-  @include default(--color-text-0);
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  height: var(--button-height);
+  height: getCssVar('button', 'height');
+  border-radius: getCssVar('border', 'radius-base');
+  font-size: getCssVar('button', 'text-size');
+  font-weight: getCssVar('button', 'font-weight');
+  background-color: getCssVar('button', 'bg-color');
+  border: 1px solid getCssVar('button', 'border-color');
+  color: getCssVar('button', 'text-color');
+  padding: getCssVar('button', 'padding');
+  margin: getCssVar('button', 'margin');
   line-height: 1;
+  user-select: none;
   cursor: pointer;
   transition: 0.1s;
-  font-size: var(--button-font-size);
-  color: var(--button-text-color);
-  border: var(--color-border);
-  padding: 8px 15px;
-  margin: 0 8px;
-  user-select: none;
-  background: var(--button-bg-color);
-  border: 1px solid var(--button-border-color);
-  border-radius: var(--button-border-radius);
-
-  @include m(small) {
-    padding: 5px 11px;
-    --button-font-size: var(--font-size-small-extra);
-    --button-height: 24px;
-  }
-
-  @include m(large) {
-    padding: 12px 19px;
-    --button-font-size: var(--font-size-large);
-    --button-height: 40px;
-  }
 
   &:hover {
-    @include default-hover;
-  }
-  &:active {
-    @include default-active(primary);
+    background-color: getCssVar('button', 'hover', 'bg-color');
+    border: 1px solid getCssVar('button', 'hover', 'border-color');
+    color: getCssVar('button', 'hover', 'text-color');
   }
 
-  @include when(plain) {
-    &:hover {
-      @include default-active(primary);
-    }
+  &:active {
+    background-color: getCssVar('button', 'active', 'bg-color');
+    border: 1px solid getCssVar('button', 'active', 'border-color');
+    color: getCssVar('button', 'active', 'text-color');
+  }
+
+  @include when(disabled) {
+    &,
+    &:hover,
     &:active {
-      @include default-active(primary);
+      background-color: getCssVar('button', 'disabled', 'bg-color');
+      border: 1px solid getCssVar('button', 'disabled', 'border-color');
+      color: getCssVar('button', 'disabled', 'text-color');
+      cursor: not-allowed;
     }
   }
 
   @include when(round) {
-    --button-border-radius: var(--border-radius-full);
+    border-radius: getCssVar('border', 'radius-round');
   }
 
   @include when(circle) {
-    --button-border-radius: var(--border-radius-circle);
-    padding: 8px;
-  }
-
-  @include when(disabled) {
-    @include default(--color-fill-5);
-    cursor: not-allowed;
-    &:hover,
-    &:active {
-      @include default(--color-fill-5);
-    }
+    @include set-component-css-var(
+      button,
+      (
+        'padding': 8px,
+      )
+    );
+    border-radius: getCssVar('border', 'radius-circle');
   }
 
   @include when(link) {
-    --button-bg-color: transparent;
-    --button-border-color: transparent;
-    --button-text-color: var(--color-text-0);
-    &:hover {
-      --button-text-color: var(--color-default-light);
-    }
-    &:active {
-      --button-text-color: var(--color-text-0);
-    }
+    color: getCssVar('button', 'text-color');
+    border: 0 solid transparent;
+    background-color: transparent;
+
     @include when(disabled) {
-      --button-text-color: var(#{$prefix + 'default-disabled'});
-      --button-bg-color: transparent;
-      --button-border-color: transparent;
+      color: getCssVar('button', 'disabled', 'text-color');
+      background-color: transparent !important;
+      &:hover,
+      &:active {
+        border: 0;
+      }
+    }
+
+    &:not(.is-disabled) {
+      &:hover,
+      &:focus {
+        color: getCssVar('button', 'hover', 'link-text-color');
+      }
+
+      &:focus-visible {
+        outline: 2px solid getCssVar('button', 'outline-color');
+        outline-offset: 1px;
+      }
+
+      &:active {
+        color: getCssVar('button', 'active', 'color');
+      }
     }
   }
 
   @include when(text) {
-    --button-bg-color: transparent;
-    --button-border-color: transparent;
-    --button-text-color: var(--color-text-0);
-    &:hover {
-      --button-bg-color: var(--color-default-hover);
-      --button-border-color: var(--color-default-hover);
-    }
-    &:active {
-      --button-bg-color: var(--color-default-active);
-      --button-border-color: var(--color-default-active);
-    }
+    color: getCssVar('button', 'text-color');
+    border: 0 solid transparent;
+    background-color: transparent;
+
     @include when(disabled) {
-      --button-text-color: var(#{$prefix + 'default-disabled'});
-      --button-bg-color: transparent;
-      --button-border-color: transparent;
+      color: getCssVar('button', 'disabled', 'text-color');
+      background-color: transparent !important;
+      &:hover,
+      &:active {
+        border: 0;
+      }
+    }
+
+    &:not(.is-disabled) {
+      &:hover,
+      &:focus {
+        background-color: getCssVar('fill-color', 'light');
+      }
+
+      &:focus-visible {
+        outline: 2px solid getCssVar('button', 'outline-color');
+        outline-offset: 1px;
+      }
+
+      &:active {
+        background-color: getCssVar('fill-color');
+      }
+
+      @include when(bg) {
+        background-color: getCssVar('fill-color', 'light');
+
+        &:hover,
+        &:focus {
+          background-color: getCssVar('fill-color');
+        }
+
+        &:active {
+          background-color: getCssVar('fill-color', 'dark');
+        }
+      }
     }
   }
 
-  @each $item in $states {
-    @include e($item) {
-      @include setState($item);
+  @each $type in (primary, success, danger, warning, info) {
+    @include m($type) {
+      @include button-variant($type);
     }
+  }
+
+  @include m(small) {
+    @include set-component-css-var(button, $button-small);
+  }
+
+  @include m(large) {
+    @include set-component-css-var(button, $button-large);
   }
 }

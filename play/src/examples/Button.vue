@@ -19,6 +19,10 @@
   <br /><br />
   <v-button v-for="item in types" :type="item" text>link</v-button>
   <br /><br />
+  <v-button v-for="item in types" :type="item" text bg>link</v-button>
+  <br /><br />
+  <v-button v-for="item in types" :type="item" text disabled>link</v-button>
+  <br /><br />
   <v-button v-for="item in types" :type="item" link disabled>link</v-button>
   <br /><br />
 </template>
