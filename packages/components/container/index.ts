@@ -5,7 +5,7 @@ import Header from './src/header.vue';
 import Footer from './src/footer.vue';
 import { withInstall, withNoopInstall } from '@voile-ui/utils';
 
-const VContainer = withInstall(Container, {
+export const VContainer = withInstall(Container, {
   Aside,
   Main,
   Header,
@@ -22,4 +22,3 @@ export type ContainerInstance = InstanceType<typeof Container>;
 export type MainInstance = InstanceType<typeof Main>;
 export type HeaderInstance = InstanceType<typeof Header>;
 export type FooterInstance = InstanceType<typeof Footer>;
-

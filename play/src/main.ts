@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
 import router from './router';
-import Voile from '@voile-ui/components';
+import Voile from 'voile-ui';
 import '@voile-ui/theme-chalk/src/index.scss';
 import App from './App.vue';
 

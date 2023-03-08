@@ -1,33 +1,32 @@
 ---
 layout: home
-sidebar: auto
 
-title: ETU Design
-titleTemplate: 一个Vue3组件库
-
+title: 选项卡标题
+titleTemplate: 选项卡描述
+editLink: true
+lastUpdated: true
 hero:
-  name: ETU Design
-  text: 一个Vue3组件库
-  tagline: 没啥特点仅供学习
+  name: Voile-ui
+  text: 组件库
+  tagline: 一个基于Vue3的组件库
   image:
-    src: /logo.png
-    alt: ETU Design
+    src: http://volit.top/logo.png
+    alt: YYG Admin UI
   actions:
     - theme: brand
-      text: 开始
-      link: /guide/quickstart
+      text: 快速开始
+      link: /guide/
     - theme: alt
-      text: 在 Gitee 上查看
-      link: https://gitee.com/geeksdidi/kittyui
-
+      text: 组件
+      link: /components/button/
 features:
-  - icon: 💡
-    title: Vue3组件库
-    details: 基于vite打包和TypeScript开发
-  - icon: 📦
-    title: 仅供学习使用
-    details: 倾向于Vue3组件库的学习，请勿用于实际生产项目
-  - icon: 🛠️
-    title: 按需引入
-    details: 直接支持按需引入无需配置任何插件。
+  - icon: 🔨
+    title: 功能/特点 1
+    details: 功能/特点 1 具体描述信息。
+  - icon: 🧩
+    title: 功能/特点 2
+    details: 功能/特点 2 具体描述信息。
+  - icon: ✈️
+    title: 功能/特点 3。
+    details: 功能/特点 3 具体描述信息。
 ---

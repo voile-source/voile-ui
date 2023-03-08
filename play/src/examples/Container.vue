@@ -53,7 +53,7 @@
 }
 
 .container {
-  border: 1px solid var(--color-primary-active);
+  border: 1px solid rgb(0, 79, 179);
   margin-bottom: 20px;
 }
 .header {
@@ -61,7 +61,7 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background: var(--color-primary);
+  background: rgb(0, 100, 250);
 }
 
 .main {
@@ -70,7 +70,7 @@
   justify-content: center;
   align-items: center;
   height: 150px;
-  background: var(--color-primary-light);
+  background: rgb(203, 231, 254);
 }
 
 .aside {
@@ -78,7 +78,7 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background: var(--color-primary-hover);
+  background: rgb(0, 98, 214);
 }
 
 .footer {

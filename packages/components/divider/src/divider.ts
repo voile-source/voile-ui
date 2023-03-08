@@ -19,5 +19,5 @@ export const dividerProps = {
   },
 } as const;
 
-export type Props = ExtractPropTypes<typeof dividerProps>;
+export type DividerProps = ExtractPropTypes<typeof dividerProps>;
 export type DividerInstance = InstanceType<typeof Divider>;
